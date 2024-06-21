@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro e listagem de produtos</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="add-product-container">
+        <form autocomplete="off" onsubmit="addProduct(event)" id="form">
+            <input type="text" id="name" placeholder="Nome" class="input-text" required>
+            <input type="text" id="description" placeholder="Descrição" class="input-text" required>
+            <input type="number" id="price" placeholder="Preço" class="input-text" required>
+            <br>
+            <span>Disponível para venda:</span>
+            <div id="available-container">
+                <input type="radio" id="available-yes" value="yes" name="available" required>
+                Sim
+                <input type="radio" id="available-no" value="no" name="available" required>
+                Não
+            </div>
+            <button>Cadastrar</button>
+        </form>
+    </div>
+    <div id="products-container" class="hidden">
+        <table>
+            <caption>
+                Produtos
+            </caption>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody id="products">
+            </tbody>
+        </table>
+        <button onclick="hideProducts()">Novo Produto</button>
+    </div>
+</body>
+</html>
